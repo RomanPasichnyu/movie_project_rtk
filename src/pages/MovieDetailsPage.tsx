@@ -1,9 +1,10 @@
 import React from 'react';
+import {MovieDetails} from "../components/MoviesConteiner";
 
 const MovieDetailsPage = () => {
     return (
         <div>
-            MovieDetailsPage
+            <MovieDetails/>
         </div>
     );
 };

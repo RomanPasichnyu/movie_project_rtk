@@ -1,5 +1,5 @@
 export interface ICardDetails{
-    genres:[number]
+    genres:{ id: number; name: string }[]
     backdrop_path: string;
     id:number;
     overview:string;

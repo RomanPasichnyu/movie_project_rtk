@@ -1,0 +1,53 @@
+.Movies {
+    border: 1px black solid;
+    border-radius: 10px;
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: space-around;
+    margin-top: 10px;
+    align-items: center;
+    background-color: #701111;
+}
+
+.Movies a {
+    text-decoration: none;
+}
+
+.Movie {
+    margin: 5px;
+}
+.Buttons {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.button {
+    margin: 10px;
+}
+
+.DetailsMain {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 30px;
+    height: auto;
+}
+
+
+.dark {
+    background-color: #701111;
+    color: #fff;
+}
+
+.light {
+    background-color: #fff;
+    color: #222;
+}
+

@@ -1,0 +1,30 @@
+.Header {
+    border-radius: 10px;
+    background-color: #701111;
+    height: 40px;
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    align-items: center;
+}
+.Header a{
+    text-decoration: none;
+}
+.Header a:hover{
+    color: blue;
+    transition: 200ms;
+}
+.dark {
+    background-color: #222;
+    color: #fff;
+}
+.dark a {
+    color: #fff;
+}
+
+.light a {
+    color: #222;
+}

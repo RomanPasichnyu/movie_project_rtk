@@ -1,8 +1,7 @@
 import {apiService} from "./apiService";
-
-import {IRes} from "../types/responceType";
 import {IApiResponse, ICardDetails} from "../interfaces";
 import {urls} from "../constants";
+import {IRes} from "../types";
 
 const movieService = {
     getAll: (page = 1, genre?: string) => apiService.get<IApiResponse>(urls.movies.base, {
