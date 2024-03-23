@@ -1,11 +1,11 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {ICardDetails, IGenre, ISearch} from "../../interfaces";
+import {ICardDetails, IMovie, ISearch} from "../../interfaces";
 import {AxiosError} from "axios";
 import {searchService} from "../../services/searchService";
 
 interface IState {
     page: number,
-    results: IGenre[],
+    results: IMovie[],
     total_pages: number,
     total_results: number
     ICardDetails: ICardDetails | null

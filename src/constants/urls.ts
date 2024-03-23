@@ -24,7 +24,7 @@ const urls = {
     },
     search: {
         base: search,
-        byKeyWord: (query: string): string => `/search/keyword?query=${query}`
+        byKeyWord: (query: string): string => `/search/movie?query=${query}`
     }
 
 }

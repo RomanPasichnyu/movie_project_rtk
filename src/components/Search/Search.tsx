@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {searchService} from "../../services/searchService";
-import {IGenre} from "../../interfaces";
+import {IMovie} from "../../interfaces";
 import {SearchResults} from "./SearchResults";
+import css from './Search.module.css'
 
 const Search = () => {
-    const { register, handleSubmit } = useForm();
-
-    const [searchResult, setSearchResult] = useState<IGenre[]>();
-
-
+    const { register, handleSubmit , reset} = useForm();
+    const [searchResult, setSearchResult] = useState<IMovie[]>();
 
     const save:SubmitHandler<any> = async (data: {query:string}) => {
         try {
@@ -17,23 +15,23 @@ const Search = () => {
             const response = await searchService.getAll(query);
             const searchResult = response.data.results
             setSearchResult(searchResult)
+            reset()
         } catch (e) {
             console.log('error');
         }
     }
-    console.log(searchResult)
-
 
     return (
-        <div>
-            <form onSubmit={handleSubmit(save)}>
-                <input type="text" placeholder="Search..." {...register('query')} />
-                <button type="submit">Search</button>
-            </form>
-            <div>
 
-            </div>
+        <div className={css.FormBlock}>
+            <form onSubmit={handleSubmit(save)} className={css.Form} >
+                <input type="text" placeholder="Enter request movie keyword..." {...register('query')} className={css.Input} />
+            </form>
+
+                {searchResult&& searchResult.map(movie=><SearchResults key={movie.id} movie={movie}/>)}
+
         </div>
+
     );
 };
 

@@ -1,0 +1,22 @@
+.FormBlock{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+
+}
+.Form{
+    margin-top: 15px;
+    justify-content: center;
+    display: flex;
+    width: 90%;
+    height: 30px;
+}
+.Input{
+    font-size: 15px;
+    width: 300px;
+}
+
