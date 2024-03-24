@@ -1,10 +1,10 @@
 import React, {useEffect} from 'react';
 import {useParams} from "react-router-dom";
+
 import {useAppDispatch, useAppSelector} from "../../hooks";
 import {movieActions} from "../../store";
 import {MovieDetail} from "./MovieDetail";
 import css from './Movies.module.css'
-
 
 const MovieDetails = () => {
 

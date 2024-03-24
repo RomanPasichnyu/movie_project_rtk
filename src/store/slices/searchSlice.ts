@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {ICardDetails, IMovie, ISearch} from "../../interfaces";
 import {AxiosError} from "axios";
+
+import {ICardDetails, IMovie, ISearch} from "../../interfaces";
 import {searchService} from "../../services/searchService";
 
 interface IState {

@@ -1,34 +1,25 @@
 import * as React from "react";
 import {FC, PropsWithChildren} from "react";
-import {ICardDetails} from "../../interfaces";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import {CardActionArea} from '@mui/material';
-import {urlImage} from "../../constants";
 import Rating from "@mui/material/Rating";
 import Stack from '@mui/material/Stack';
 import Badge from '@mui/material/Badge';
+
+import {urlImage} from "../../constants";
 import {useAppSelector} from "../../hooks";
 import css from './Movies.module.css'
-
+import {ICardDetails} from "../../interfaces";
 
 interface IProps extends PropsWithChildren {
     ICardDetails: ICardDetails
 }
 
 const MovieDetail: FC<IProps> = ({ICardDetails}) => {
-    const {
-        original_title,
-        vote_average,
-        poster_path,
-        genres,
-        runtime,
-        status,
-        release_date,
-        overview
-    } = ICardDetails;
+    const {original_title, vote_average, poster_path, genres, runtime, status, release_date, overview} = ICardDetails;
 
     const genreName = genres.map(genre => genre.name).join(', ');
     const darkMode = useAppSelector(state => state.themes.darkTheme);

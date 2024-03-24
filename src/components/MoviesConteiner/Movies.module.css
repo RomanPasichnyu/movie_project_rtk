@@ -20,9 +20,9 @@
     margin: 5px;
 }
 .Buttons {
-    width: 80%;
+    width: 30%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 20px;
 }
 

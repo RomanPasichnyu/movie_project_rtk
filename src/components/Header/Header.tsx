@@ -1,16 +1,16 @@
 import React from 'react';
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import css from './Header.module.css'
-
 import {styled} from '@mui/material/styles';
 import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
-import {useAppDispatch, useAppSelector} from "../../hooks";
 import {themeActions} from "../../store/slices/themeSlice";
 
-const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+import {useAppDispatch, useAppSelector} from "../../hooks";
+import css from './Header.module.css'
+
+const MaterialUISwitch = styled(Switch)(({theme}) => ({
     width: 62,
     height: 34,
     padding: 7,
@@ -61,26 +61,30 @@ const Header = () => {
 
     const dispatch = useAppDispatch();
     const darkMode = useAppSelector(state => state.themes.darkTheme);
+    const navigate = useNavigate();
 
-    const switchTheme = ()=>{
+    const switchTheme = () => {
         dispatch(themeActions.themeSwitch())
     }
-
+    const back = () => {
+        navigate(-1)
+    }
 
     return (
         <div className={darkMode ? css.dark : css.light}>
-        <div className={css.Header}>
-            <NavLink to={'movies'}>Movies</NavLink>
-            <NavLink to={'genres'}>Genres</NavLink>
-            <NavLink to={'search/keyword'}>Search</NavLink>
-            <FormGroup >
-                <FormControlLabel
-                    control={<MaterialUISwitch sx={{ m: 1 }} defaultChecked  onClick={switchTheme}/>}
-                    label="Theme"
-                />
-            </FormGroup>
-            <div><AccountCircleIcon/>User</div>
-        </div>
+            <div className={css.Header}>
+                <button onClick={back}>← </button>
+                <NavLink to={'movies'}>Movies</NavLink>
+                <NavLink to={'genres'}>Genres</NavLink>
+                <NavLink to={'search/keyword'}>Search</NavLink>
+                <FormGroup>
+                    <FormControlLabel
+                        control={<MaterialUISwitch sx={{m: 1}} defaultChecked onClick={switchTheme}/>}
+                        label=""
+                    />
+                </FormGroup>
+                <div><AccountCircleIcon/>User</div>
+            </div>
         </div>
     );
 };
