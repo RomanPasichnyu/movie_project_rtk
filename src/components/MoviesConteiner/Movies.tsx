@@ -18,7 +18,7 @@ const Movies = () => {
         const pageParam = query.get('page');
         const page = pageParam !== null ? parseInt(pageParam) : 1;
         dispatch(movieActions.getAll({page, genre}))
-    }, [query]);
+    }, [query, dispatch, genre]);
 
     return (
             <div className={css.Movies}>
