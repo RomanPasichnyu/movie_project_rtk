@@ -13,7 +13,7 @@ const MovieDetails = () => {
 
     useEffect(() => {
         dispatch(movieActions.getById(+id))
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const {ICardDetails} = useAppSelector(state => state.details);
 
